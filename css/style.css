@@ -762,16 +762,16 @@ header .container nav a:hover::before {
     }
 }
 .about-me .content>.container .links li:first-child i:hover::after {
-    animation: about-me-links1 1s linear forwards;
+    animation: about-me-links1 1s ease forwards;
 }
 .about-me .content>.container .links li:nth-child(2) i:hover::after {
-    animation: about-me-links2 1s linear forwards;
+    animation: about-me-links2 1s ease forwards;
 }
 .about-me .content>.container .links li:nth-child(3) i:hover::after {
-    animation: about-me-links3 1s linear forwards;
+    animation: about-me-links3 1s ease forwards;
 }
 .about-me .content>.container .links li:last-child i:hover::after {
-    animation: about-me-links4 1s linear forwards;
+    animation: about-me-links4 1s ease forwards;
 }
 @media (max-width: 992px) {
     .about-me .content>.container {
@@ -792,16 +792,16 @@ header .container nav a:hover::before {
         font-size: 12px;
     }
     .about-me .content>.container .links li:first-child i:hover::after {
-        animation: about-me-media-links1 1s linear forwards;
+        animation: about-me-media-links1 1s ease forwards;
     }
     .about-me .content>.container .links li:nth-child(2) i:hover::after {
-        animation: about-me-media-links2 1s linear forwards;
+        animation: about-me-media-links2 1s ease forwards;
     }
     .about-me .content>.container .links li:nth-child(3) i:hover::after {
-        animation: about-me-media-links3 1s linear forwards;
+        animation: about-me-media-links3 1s ease forwards;
     }
     .about-me .content>.container .links li:last-child i:hover::after {
-        animation: about-me-media-links4 1s linear forwards;
+        animation: about-me-media-links4 1s ease forwards;
     }
     .about-me .content>.container img {
         width: calc(90%);
