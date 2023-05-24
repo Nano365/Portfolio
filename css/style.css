@@ -1,0 +1,1042 @@
+* {
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: "Cairo", sans-serif;
+    background-color: rgb(245, 244, 244);
+}
+a {
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background-color: white;
+}
+::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(to bottom ,rgb(214 213 4) ,rgb(177 125 33) );
+}
+/* start container and media for it */
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (min-width: 777px) {
+    .container {
+      width: 750px;
+    }
+}
+@media (min-width: 992px) {
+    .container {
+      width: 970px;
+    }
+}
+@media (min-width: 1200px) {
+    .container {
+      width: 1170px;
+    }
+}
+/* end container and media for it */
+/* :root {
+    --main-color: rgb(6, 127, 234);
+    --color-hover: rgb(21, 118, 157);
+    --main-transition: 0.3s;
+    --text-color: rgb(94, 94, 94);
+    --main-background: linear-gradient(to right ,rgb(0, 162, 255) ,rgb(10, 243, 255));
+    --main-background: linear-gradient(to right ,rgb(0, 162, 255) ,rgb(10, 255, 67));
+} */
+:root {
+    --main-color: rgb(209 176 24);
+    --color-hover: rgb(21, 118, 157);
+    --main-transition: 0.3s;
+    --text-color: rgb(94, 94, 94);
+    --main-background: linear-gradient(to right ,rgb(214 213 4) ,rgb(177 125 33));
+}
+/* start header */
+header {
+    background-color: white;
+    width: 100%;
+    min-height: 50px;
+    border-bottom: 1px solid var(--main-color);
+    position: fixed;
+    z-index: 2;
+    top: 0;
+}
+header .container {
+    min-height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+header .container .logo {
+    width: 200px;
+    font-size: 25px;
+    color: var(--main-color);
+    font-weight: 600;
+}
+header .container nav {
+    display: flex;
+    flex: 1;
+    margin-left: 40%;
+}
+header .container nav a {
+    text-align: center;
+    color: var(--text-color);
+    padding: 15px 20px;
+    position: relative;
+    overflow: hidden;
+    font-size: 17px;
+    font-weight: 700;
+}
+header .container nav a:nth-child(2) {
+    width: fit-content;
+}
+header .container nav a:nth-child(2) li {
+    width: 80px;
+}
+header .container nav a::before {
+    content: "";
+    position: absolute;
+    height: 5px;
+    bottom: 0px;
+    transition: var(--main-transition);
+    background-image: var(--main-background);
+}
+header .container nav a:hover {
+    color: var(--main-color);
+}
+header .container nav a:hover::before {
+    animation: header-a-hover 0.2s linear forwards;
+}
+@media (max-width: 1200px) {
+    header .container .logo {
+        font-size: 22px;
+    }
+}
+@keyframes header-a-hover {
+    0% {
+        width: 0;
+        left: 50%;
+    }
+    100% {
+        width: 100%;
+        left: 0;
+    }
+}
+@media (max-width: 992px) {
+    header .container nav {
+        margin-left: 0;
+        flex: 0;
+    }
+}
+@media (max-width: 700px) {
+    header .container nav a {
+        padding: 15px 10px;
+        font-size: 14px;
+    }
+}
+@media (max-width: 550px) {
+    header .container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    header .container .logo {
+        width: auto;
+        margin-top: 5px;
+        margin-bottom: -5px;
+    }
+}
+@media (max-width: 370px) {
+    header .container nav a {
+        font-size: 13px;
+        padding: 15px 5px;
+    }
+}
+/* end header */
+/* start home */
+.home {
+    height: 100vh;
+    background-color: rgb(230, 229, 229);
+    }
+.home .container {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    overflow: hidden;
+}
+.home .container .image {
+    width: 400px;
+    height: 400px;
+    position: relative;
+}
+.home .container .image::before {
+    content: "";
+    width: 400px;
+    height: 400px;
+    padding: 5px;
+    background-image: var(--main-background);
+    border-radius: 50%;
+    top: -6px;
+    left: -5px;
+    position: absolute;
+    animation: out-line-image 3s infinite linear;
+}
+.home .container img {
+    width: 400px;
+    border-radius: 50%;
+    position: absolute;
+}
+.home .container .text h2 {
+    font-size: 30px;
+    color: var(--main-color);
+    margin-top: -50px;
+}
+.home .container .text {
+    position: relative;
+    font-size: 20px;
+    color: var(--text-color);
+}
+.home .container .text::before {
+    content: "Front End w";
+    position: absolute;
+    font-size: 20px;
+    text-align: center;
+    line-height: 1.8;
+    top: 80%;
+    left: 0;
+    animation: home-p 1s infinite alternate;
+}
+@keyframes home-p {
+    0% {
+        content: "Front End W";
+    }
+    5% {
+        content: "Front End We";
+    }
+    10% {
+        content: "Front End Web ";
+    }
+    30% {
+        content: "Front End Web D";
+    }
+    45% {
+        content: "Front End Web De";
+    }
+    50% {
+        content: "Front End Web Dev";
+    }
+    55% {
+        content: "Front End Web Devel";
+    }
+    60% {
+        content: "Front End Web Develo";
+    }
+    80% {
+        content: "Front End Web Develop";
+    }
+    90% {
+        content: "Front End Web Develope";
+    }
+    100% {
+        content: "Front End Web Developer";
+    }
+    
+}
+@keyframes out-line-image {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@media (max-width: 1046px) {
+    .home .container .text h2 {
+        font-size: 23px;
+        font-weight: 700;
+    }
+    .home .container .text {
+        font-size: 17px;
+    }
+    .home .container .text::before {
+        font-size: 17px;
+    }
+    .home .container img {
+        width: 295px;
+    }
+    .home .container .image::before {
+        width: 295px;
+        height: 295px;
+    }
+    .home .container .image {
+        width: 295px;
+        height: 295px;
+    }
+}
+@media (max-width: 800px) {
+.home .container {
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.home .container img {
+    width: 250px;
+}
+.home .container .image::before {
+    width: 250px;
+    height: 250px;
+}
+.home .container .image {
+    width: 250px;
+    height: 250px;
+}
+.home .container .text {
+    text-align: center;
+}
+.home .container .text::before {
+    width: 100%;
+    text-align: center;
+}
+}
+@media (max-width: 400px) {
+    .home .container img {
+        width: 240px;
+    }
+    .home .container .image::before {
+        width: 240px;
+        height: 240px;
+    }
+    .home .container .image {
+        width: 240px;
+        height: 240px;
+    }
+}
+@media (max-width: 300px) {
+    .home .container img {
+        width: 180px;
+    }
+    .home .container .image::before {
+        width: 180px;
+        height: 180px;
+    }
+    .home .container .image {
+        width: 180px;
+        height: 180px;
+    }
+}
+/* end home */
+/* start about me */
+.about-me .content {
+    display: flex;
+    justify-content: center;
+}
+.about-me .content>.container {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 0px rgb(156, 156, 156);
+    padding: 50px 25px;
+    margin: 50px 0;
+    position: relative;
+    transition: var(--main-transition);
+}
+.about-me .content>.container:hover {
+    box-shadow: 0px 0px 20px 0px rgb(116, 116, 116);
+}
+.about-me .content>.container img {
+    width: 40%;
+    border-radius: 20px;
+    margin-bottom: 50px;
+    box-shadow: 0px 0px 20px 11px rgb(150 150 150);
+}
+.about-me .content>.container .text>.container {
+    width: 100%;
+    min-height: 200px;
+    font-size: 20px;
+    color: var(--text-color);
+}
+.about-me .content>.container .text .container div {
+    min-height: 30px;
+    margin-bottom: 20px;
+}
+.about-me .content>.container .text>.container>div:not(:last-child):before {
+    content: "";
+    width: 600px;
+    color: var(--text-color);
+    position: relative;
+}
+.about-me .content>.container .text>.container div:first-child::before {
+    animation: line-1-about-me 2s linear forwards ;
+}
+.about-me .content>.container .text>.container div:nth-child(2)::before {
+    animation: line-2-about-me 2s 2s linear forwards ;
+}
+.about-me .content>.container .text>.container div:nth-child(3)::before {
+    animation: line-3-about-me 1s 4s linear forwards ;
+}
+.about-me .content>.container .text>.container div:nth-child(4)::before {
+    animation: line-4-about-me 3s 5s linear forwards ;
+}
+.about-me .content>.container .text>.container div:nth-child(5)::before {
+    animation: line-5-about-me 3s 8s linear forwards ;
+}
+@keyframes line-1-about-me {
+    0%{
+        content: "";
+    }
+    5%{
+        content: "I";
+    }
+    10%{
+        content: "I'm";
+    }
+    15%{
+        content: "I'm A";
+    }
+    20%{
+        content: "I'm Ab";
+    }
+    25%{
+        content: "I'm Abd";
+    }
+    30%{
+        content: "I'm Abda";
+    }
+    35%{
+        content: "I'm Abdal";
+    }
+    40%{
+        content: "I'm Abdall";
+    }
+    45%{
+        content: "I'm Abdalla";
+    }
+    50%{
+        content: "I'm Abdalla E";
+    }
+    55%{
+        content: "I'm Abdalla El";
+    }
+    60%{
+        content: "I'm Abdalla Elhg";
+    }
+    65%{
+        content: "I'm Abdalla Elhgar";
+    }
+    70%{
+        content: "I'm Abdalla Elhgar, a";
+    }
+    75%{
+        content: "I'm Abdalla Elhgar, a w";
+    }
+    80%{
+        content: "I'm Abdalla Elhgar, a we";
+    }
+    85%{
+        content: "I'm Abdalla Elhgar, a web";
+    }
+    90%{
+        content: "I'm Abdalla Elhgar, a web de";
+    }
+    95%{
+        content: "I'm Abdalla Elhgar, a web devel";
+    }
+    100%{
+        content: "I'm Abdalla Elhgar, a web developer.";
+    }
+}
+@keyframes line-2-about-me {
+    0%{
+        content: "";
+    }
+    5%{
+        content: "M";
+    }
+    10%{
+        content: "M";
+    }
+    15%{
+        content: "My";
+    }
+    20%{
+        content: "My";
+    }
+    25%{
+        content: "My ";
+    }
+    30%{
+        content: "My a";
+    }
+    35%{
+        content: "My ag";
+    }
+    40%{
+        content: "My ag";
+    }
+    45%{
+        content: "My age ";
+    }
+    50%{
+        content: "My age i";
+    }
+    55%{
+        content: "My age is";
+    }
+    60%{
+        content: "My age is 19 ";
+    }
+    65%{
+        content: "My age is 19 y";
+    }
+    70%{
+        content: "My age is 19 ye";
+    }
+    75%{
+        content: "My age is 19 yea";
+    }
+    80%{
+        content: "My age is 19 year";
+    }
+    85%{
+        content: "My age is 19 years";
+    }
+    90%{
+        content: "My age is 19 years o";
+    }
+    95%{
+        content: "My age is 19 years ol";
+    }
+    100%{
+        content: "My age is 19 years old.";
+    }  
+}
+@keyframes line-3-about-me {
+    0%{
+        content: "";
+    }
+    10%{
+        content: "I";
+    }
+    20%{
+        content: "I";
+    }
+    30%{
+        content: "I st";
+    }
+    40%{
+        content: "I study";
+    }
+    50%{
+        content: "I study a";
+    }
+    60%{
+        content: "I study at";
+    }
+    70%{
+        content: "I study at H";
+    }
+    80%{
+        content: "I study at HI";
+    }
+    90%{
+        content: "I study at HIM";
+    }
+    100%{
+        content: "I study at HIMIT.";
+    }
+}
+@keyframes line-4-about-me {
+    0%{
+        content: "";
+    }
+    5%{
+        content: "I";
+    }
+    10%{
+        content: "I h";
+    }
+    15%{
+        content: "I ha";
+    }
+    20%{
+        content: "I have";
+    }
+    25%{
+        content: "I have compl";
+    }
+    30%{
+        content: "I have complete";
+    }
+    35%{
+        content: "I have completed the ";
+    }
+    40%{
+        content: "I have completed the HTML";
+    }
+    45%{
+        content: "I have completed the HTML co";
+    }
+    50%{
+        content: "I have completed the HTML course";
+    }
+    55%{
+        content: "I have completed the HTML course an";
+    }
+    60%{
+        content: "I have completed the HTML course and t";
+    }
+    65%{
+        content: "I have completed the HTML course and the";
+    }
+    70%{
+        content: "I have completed the HTML course and the C";
+    }
+    75%{
+        content: "I have completed the HTML course and the CS";
+    }
+    80%{
+        content: "I have completed the HTML course and the CSS";
+    }
+    85%{
+        content: "I have completed the HTML course and the CSS c";
+    }
+    90%{
+        content: "I have completed the HTML course and the CSS cour";
+    }
+    95%{
+        content: "I have completed the HTML course and the CSS cours";
+    }
+    100%{
+        content: "I have completed the HTML course and the CSS course.";
+    }  
+}
+@keyframes line-5-about-me {
+    0%{
+        content: "";
+    }
+    5%{
+        content: "N";
+    }
+    10%{
+        content: "N";
+    }
+    15%{
+        content: "No";
+    }
+    20%{
+        content: "Now ";
+    }
+    25%{
+        content: "Now I";
+    }
+    30%{
+        content: "Now I'm";
+    }
+    35%{
+        content: "Now I'm st";
+    }
+    40%{
+        content: "Now I'm stud";
+    }
+    45%{
+        content: "Now I'm studyi";
+    }
+    50%{
+        content: "Now I'm studying ";
+    }
+    55%{
+        content: "Now I'm studying t";
+    }
+    60%{
+        content: "Now I'm studying the";
+    }
+    65%{
+        content: "Now I'm studying the Ja";
+    }
+    70%{
+        content: "Now I'm studying the Javasc";
+    }
+    75%{
+        content: "Now I'm studying the Javascript ";
+    }
+    80%{
+        content: "Now I'm studying the Javascript pro";
+    }
+    85%{
+        content: "Now I'm studying the Javascript program";
+    }
+    90%{
+        content: "Now I'm studying the Javascript programming ";
+    }
+    95%{
+        content: "Now I'm studying the Javascript programming lan";
+    }
+    100%{
+        content: "Now I'm studying the Javascript programming language.";
+    }  
+}
+.about-me .content>.container .links {
+    padding-top: 20px;
+    font-size: 35px;
+}
+.about-me .content>.container .links i {
+    color: var(--main-color);
+    margin-top: 20px;
+    position: relative;
+}
+.about-me .content>.container .links li:first-child i:after {
+    content: "+201129352754";
+}
+.about-me .content>.container .links li:nth-child(2) i:after {
+    content: "Facebook";
+}
+.about-me .content>.container .links li:nth-child(3) i:after {
+    content: "LinkedIn";
+}
+.about-me .content>.container .links li:last-child i:after {
+    content: "Instagram";
+}
+.about-me .content>.container .links i::after {
+    position: absolute;
+    width: 0;
+    left: 45px;
+    top: 2px;
+    padding: 5px;
+    color: rgb(245, 244, 244);
+    font-size: 20px;
+    background-color: rgb(122, 122, 122);
+    letter-spacing: 2.5px;
+    visibility: hidden;
+    transition: var(--main-transition);
+}
+@keyframes about-me-links1 {
+    20% {
+        visibility: visible;
+    }
+    100% {
+        width: 200px;
+        visibility: visible;
+    }
+}
+@keyframes about-me-links2 {
+    20% {
+        visibility: visible;
+    }
+    100% {
+        width: 135px;
+        visibility: visible;
+    }
+}
+@keyframes about-me-links3 {
+    20% {
+        visibility: visible;
+    }
+    100% {
+        width: 130px;
+        visibility: visible;
+    }
+}
+@keyframes about-me-links4 {
+    20% {
+        visibility: visible;
+    }
+    100% {
+        width: 155px;
+        visibility: visible;
+    }
+}
+.about-me .content>.container .links li:first-child i:hover::after {
+    animation: about-me-links1 1s linear forwards;
+}
+.about-me .content>.container .links li:nth-child(2) i:hover::after {
+    animation: about-me-links2 1s linear forwards;
+}
+.about-me .content>.container .links li:nth-child(3) i:hover::after {
+    animation: about-me-links3 1s linear forwards;
+}
+.about-me .content>.container .links li:last-child i:hover::after {
+    animation: about-me-links4 1s linear forwards;
+}
+@media (max-width: 992px) {
+    .about-me .content>.container {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+    }
+    .about-me .content>.container .links {
+        font-size: 30px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 80px;
+    }
+    .about-me .content>.container .links i::after {
+        top: 120%;
+        left: 50%;
+        font-size: 12px;
+    }
+    .about-me .content>.container .links li:first-child i:hover::after {
+        animation: about-me-media-links1 1s linear forwards;
+    }
+    .about-me .content>.container .links li:nth-child(2) i:hover::after {
+        animation: about-me-media-links2 1s linear forwards;
+    }
+    .about-me .content>.container .links li:nth-child(3) i:hover::after {
+        animation: about-me-media-links3 1s linear forwards;
+    }
+    .about-me .content>.container .links li:last-child i:hover::after {
+        animation: about-me-media-links4 1s linear forwards;
+    }
+    .about-me .content>.container img {
+        width: calc(90%);
+    }
+}
+@media (max-width: 600px) {
+    .about-me .content>.container .text>.container {
+        font-size: 15px;
+    }
+    .about-me .content>.container .links {
+        font-size: 30px;
+        gap: 40px;
+    }
+    .about-me .content>.container .links i::after {
+        display: none;
+    }
+}
+@keyframes about-me-media-links1 {
+    20% {
+        visibility: visible;
+        left: 0;
+    }
+    100% {
+        width: 130px;
+        visibility: visible;
+        left: -60px;
+    }
+}
+@keyframes about-me-media-links2 {
+    20% {
+        visibility: visible;
+        left: 0;
+    }
+    100% {
+        width: 88px;
+        visibility: visible;
+        left: -35px;
+    }
+}
+@keyframes about-me-media-links3 {
+    20% {
+        visibility: visible;
+        left: 0;
+    }
+    100% {
+        width: 94px;
+        visibility: visible;
+        left: -38px;
+    }
+}
+@keyframes about-me-media-links4 {
+    20% {
+        visibility: visible;
+        left: 0;
+    }
+    100% {
+        width: 100px;
+        visibility: visible;
+        left: -40px;
+    }
+}
+/* end about me */
+
+/* start servises */
+.servises .content .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(300px , 1fr));
+    gap: 60px;
+}
+.servises .content .service {
+    box-shadow: 0px 0px 20px 0px rgb(156, 156, 156);
+    border-radius: 15px;
+    transition: var(--main-transition);
+    position: relative;
+    overflow: hidden;
+}
+.servises .content .service:hover {
+    box-shadow: 0px 0px 20px 0px rgb(139, 139, 139);
+    transform: scale(1.01);
+}
+.servises .content .service>div{
+    text-align: center;
+}
+.servises .content .icon {
+    margin-top: 50px;
+    position: relative;
+    font-size: 150px;
+    color: var(--main-color);
+}
+.servises .content .service span {
+    color: var(--main-color);
+}
+.servises .content h3 {
+    font-size: 30px;
+    padding: 10px;
+    color: var(--main-color);
+}
+.servises .content p {
+    color: var(--text-color);
+    font-size: 18px;
+    line-height: 1.5;
+    padding: 0 20px;
+    margin-top: -10px;
+}
+@media(max-width: 700px) {
+    .servises .content .container {
+        grid-template-columns: repeat(auto-fill , minmax(calc(200px) , 1fr));
+        text-align: center;
+    }
+}
+
+
+/* end servises */
+/* start projects */
+.projects {
+    padding-bottom: 50px;
+}
+.projects .content>.container {
+    /* display: flex;
+    justify-content: space-around; */
+    display: grid;
+    grid-template-columns: repeat(auto-fill ,minmax(400px , 1fr));
+    gap: 50px;
+}
+.projects .content .box {
+    display: block;
+    background-color: rgb(252, 252, 252);
+    box-shadow: 0px 0px 20px 0px rgb(156, 156, 156);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: var(--main-transition);
+}
+.projects .content .box .image {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+}
+.projects .content .box:hover {
+    box-shadow: 0px 0px 20px 0px rgb(121, 121, 121);
+}
+.projects .content .box:hover img {
+    transform: scale(1.1) translateY(10px);
+}
+.projects .content .box img {
+    width: 100%;
+    transition: var(--main-transition);
+}
+.projects .content .box .text h3 {
+    font-size: 25px;
+    color: var(--main-color);
+}
+.projects .content .box .text p {
+    color: var(--text-color);
+    font-size: 17px;
+    line-height: 1.5;
+    padding: 10px;
+}
+.projects .content .box .text p span {
+    color: var(--main-color);
+    font-size: 18;
+    font-weight: 700;
+}
+.projects .content .box .box-content {
+    position: relative;
+}
+.projects .content .box .enter {
+    width: fit-content;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    position: absolute;
+    right: 4%;
+    top: 57%;
+    border-radius: 5px;
+    padding: 8px;
+    overflow: hidden;
+    transition: var(--main-transition);
+    background-color: transparent;
+    display: block;
+    visibility: hidden;
+}
+.projects .content .box:hover .enter {
+    visibility: visible;
+}
+.projects .content .box .enter::before {
+    content: "Enter";
+    color: white;
+    text-align: center;
+    padding-top: 7px;
+    width: 100%;
+    height: 100%;
+    background-image: var(--main-background);
+    position: absolute;
+    top: 100%;
+    left: 0; 
+    transition: var(--main-transition);
+}
+.projects .content .box:hover .enter::before {
+    margin-top: -62.1%
+}
+@media (max-width: 777px) {
+    .projects .content .box .box-content {
+        display: flex; 
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .projects .content .box {
+        text-align: center;
+        padding-bottom: 20px;
+    }
+    .projects .content .box .enter {
+        width: 70%;
+        color: white;
+        font-size: 20px;
+        font-weight: 500;
+        position: relative;
+        border-radius: 0;
+        text-align: center;
+        overflow: hidden;
+        transition: var(--main-transition);
+        background-color: transparent;
+        display: block;
+        left: 0;
+    }
+    .projects .content .box:hover .enter::before {
+        margin-top: -40px;
+    }
+}
+@media (max-width: 450px) {
+    .projects .content>.container {
+        grid-template-columns: repeat(auto-fill ,minmax(200px , 1fr));
+    }
+    .projects .content .box:hover img {
+        transform: scale(1.1) translateY(7px);
+    }
+}
+/* end projects */
