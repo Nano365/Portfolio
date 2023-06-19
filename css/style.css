@@ -1128,7 +1128,32 @@ header .container nav a:hover::before {
 .skills .content .container img {
     width: 550px;
 }
-    
+
+.skills .content .container .photo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+@media (max-width: 1200px) {
+    .skills .content .container img {
+        width: 400px;
+    }
+    .skills .content .container .pro_lang {
+        margin-top: -50px;
+    }
+}
+@media (max-width: 992px) {
+    .skills .content .container {
+        flex-direction: column-reverse;
+    }
+}    
+@media (max-width: 560px) {
+    .skills .content .container .photo img {
+        width: 90%;
+    }
+}
 /* end skills */
 
 /* start footer */
@@ -1150,8 +1175,30 @@ footer {
             color: rgb(245, 244, 244);
             letter-spacing: 1.5px;
         }
+    }
+}
 
-
+@media (max-width: 778px) {
+    footer .container {
+        gap: 30%;
+    }
+}
+@media (max-width: 560px) {
+    footer .container {
+        gap: 20%;
+        
+        .phone-number ,
+        .mail a {
+            font-size: 14px;
+            font-weight: 400;
+        }
+    }
+}
+@media (max-width: 410px) {
+    footer .container {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
     }
 }
 /* end footer */
