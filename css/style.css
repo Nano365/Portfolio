@@ -808,12 +808,16 @@ header .container nav a:hover::before {
     }
 }
 @media (max-width: 600px) {
+    .about-me .content>.container .links li:first-child i{
+        display: none;
+    }
     .about-me .content>.container .text>.container {
         font-size: 15px;
     }
     .about-me .content>.container .links {
         font-size: 30px;
-        gap: 40px;
+        gap: 30%;
+        margin-left: -15%;
     }
     .about-me .content>.container .links i::after {
         display: none;
@@ -1040,3 +1044,117 @@ header .container nav a:hover::before {
     }
 }
 /* end projects */
+
+/* start skills */
+.skills .content .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+    margin-bottom: 100px;
+}
+.skills .content .container > div {
+    width: 100%;
+    gap: 30px;
+    display: flex;
+    flex-direction: column;
+}
+.skills .content .container div > div {
+    width: 100%;
+    
+}
+.skills .content .container div > div h3 {
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+}
+.skills .content .container div .bar {
+    width: 90%;
+    height: 30px;
+    background-color: rgb(213, 213, 213);
+    position: relative;
+    
+}
+.skills .content .container div .bar::after{
+    content: "";
+    height: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: var(--main-background);
+}
+.skills .content .container div .bar::before {
+    position: absolute;
+    font-size: 16px;
+    top: -25px;
+    right: 5px;
+}
+.skills .content .container div .html .bar::before {
+    content: "90%";
+}
+.skills .content .container div .html .bar::after {
+    width: 90%;
+}
+.skills .content .container div .css .bar::before {
+    content: "95%";
+}
+.skills .content .container div .css .bar::after {
+    width: 95%;
+}
+.skills .content .container div .JS .bar::after {
+    width: 85%;
+}
+.skills .content .container div .JS .bar::before {
+    content: "85%";
+}
+.skills .content .container div .Ps .bar::after {
+    width: 90%;
+}
+.skills .content .container div .Ps .bar::before {
+    content: "90%";
+}
+.skills .content .container div .Pr .bar::after {
+    width: 90%;
+}
+.skills .content .container div .Pr .bar::before {
+    content: "90%";
+}
+.skills .content .container div .Ae .bar::after {
+    width: 90%;
+}
+.skills .content .container div .Ae .bar::before {
+    content: "90%";
+}
+.skills .content .container img {
+    width: 550px;
+}
+    
+/* end skills */
+
+/* start footer */
+footer {
+    background-color: var(--main-color);
+    width: 100%;
+    margin-top: 100px;
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 50%;
+
+        .phone-number ,
+        .mail a {
+            font-size: 18px;
+            font-weight: 500;
+            color: rgb(245, 244, 244);
+            letter-spacing: 1.5px;
+        }
+
+
+    }
+}
+/* end footer */
+
+
+
